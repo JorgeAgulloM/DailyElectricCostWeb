@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NgIf, NgFor } from '@angular/common';
+import { ProductComponent } from './products/components/product.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgFor],
+  imports: [RouterOutlet, ProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
