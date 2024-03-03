@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -7,7 +6,7 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductService {
 
-  private products: Product[] = [
+  /**private products: Product[] = [
     {
       id: 1,
       name: 'Mesa escritorio',
@@ -20,12 +19,9 @@ export class ProductService {
       description: 'Tecaldo de bajo consumo',
       price: 110
     }
-  ];
+  ];*/
 
   constructor() { }
 
-  findAll(): Observable<Product[]> {
-    return of(this.products)
-  }
 
 }
