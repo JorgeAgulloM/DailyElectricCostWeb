@@ -1,15 +1,18 @@
-<button type="button" (click)="setEnabled()">
-  {{ enabled ? "ocultar" : "Msotrar" }}
-</button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyElectricCostWebApp</title>
+</head>
+<body>
+  
+<app-top-bar></app-top-bar>
+<app-header></app-header>
+<app-media></app-media>
+<app-app-features></app-app-features>
+<app-footer></app-footer>
 
-@if (enabled) {
-  <h2>{{ title }}</h2>
-  <ul>
-    @for (course of courses; track $index) {
-    <li>{{ course }}</li>
-    }
-  </ul>
-} @else {
-  <h2><div>No disponible</div></h2>
-}
+</body>
+</html>
 
