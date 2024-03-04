@@ -1,0 +1,51 @@
+:root {
+    --shadow-color: #369EFF;
+    --shadow-2-color: #94cbff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    background-color: black;
+}
+
+.card {
+    background-color: black;
+    border-radius: 2rem;
+    margin: 24px;
+}
+
+.card-title {
+    color: white;
+}
+
+.card img {
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 1px #369EFF;
+}
+
+.timg {
+    display: block;
+    overflow: hidden;
+    object-fit: contain;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 0 #369EFF;
+    margin: 0 auto;
+}
+
+iframe {
+    width: 1120px;
+    height: 630px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0 #369EFF;
+}
+
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+}

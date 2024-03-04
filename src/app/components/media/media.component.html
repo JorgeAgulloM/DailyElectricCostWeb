@@ -1,1 +1,19 @@
-<p>media works!</p>
+<section>
+    <ul class="container">
+        @for (data of cardData; track $index) {
+            <div class="card">
+                <img src="{{ data.image }}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h6 class="card-title">{{ data.title}}</h6>
+                </div>
+                
+            </div>
+            
+        }
+    </ul>
+    <section class="container">
+        <div>
+            <iframe  src="https://www.youtube.com/embed/zAzbj_OGmZU?si=wPJ9DA8dd36mfUqd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+</section>
