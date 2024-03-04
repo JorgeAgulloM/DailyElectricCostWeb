@@ -15,7 +15,15 @@
     --btn-icon-text-color: #FFFFFF;
     --btn-icon-hover-text-color: #369EFF;
     --btn-icon-shadow-bg-color: #94cbff;
+}
 
+@font-face {
+    font-family: 'plusJakartaSans';
+    src: url('./assets/fonts/PlusJakartaSans.ttf');
+}
+
+p {
+    font-family: 'plusJakartaSans';
 }
 
 /* Body */
