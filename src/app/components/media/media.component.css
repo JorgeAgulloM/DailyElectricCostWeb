@@ -29,11 +29,20 @@
     box-shadow: 0 0 10px 1px #369EFF;
 }
 
+.card img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #94cbff;
+}
+
 iframe {
     width: 1120px;
     height: 630px;
     border-radius: 1rem;
     box-shadow: 0 0 10px 0 #369EFF;
+}
+
+iframe:hover {
+    box-shadow: 0 0 10px 5px #94cbff;
 }
 
 p {
