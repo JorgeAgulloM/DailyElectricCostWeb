@@ -45,6 +45,10 @@ input:focus {
     box-shadow: 0 0 10px 1px  #94cbff;
 }
 
+input:hover {
+    cursor: pointer;
+}
+
 label {
     margin-top: 24px;
     text-align: center;
