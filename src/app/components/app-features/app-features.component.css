@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    margin: 8px;
+    color: white;
+    background-color: rgb(11, 19, 30);
+    border-radius: 0.5rem;
+    border-color: rgb(29, 49, 78);
+}
+
+.card-text {
+    color: darkgray;
+}
+
+i {
+    margin-left: 8px;
+    margin-top: 8px;
+    color: white;
+}
