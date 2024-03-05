@@ -27,15 +27,6 @@
     box-shadow: 0 0 10px 1px #369EFF;
 }
 
-.timg {
-    display: block;
-    overflow: hidden;
-    object-fit: contain;
-    border-radius: 2rem;
-    box-shadow: 0 0 10px 0 #369EFF;
-    margin: 0 auto;
-}
-
 iframe {
     width: 1120px;
     height: 630px;
