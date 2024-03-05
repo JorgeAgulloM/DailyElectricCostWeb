@@ -11,6 +11,11 @@
     border-color: rgb(29, 49, 78);
 }
 
+.card:hover {
+    box-shadow: 0 0 10px 1px #94cbff;
+    cursor: pointer;
+}
+
 .card-text {
     color: darkgray;
 }
