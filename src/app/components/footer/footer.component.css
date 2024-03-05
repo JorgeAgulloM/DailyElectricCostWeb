@@ -97,6 +97,10 @@ label {
     color: darkgray;
 }
 
+.rrss i:hover {
+    color: #94cbff;
+}
+
 /* End line*/
 .end {
     flex: 1;
