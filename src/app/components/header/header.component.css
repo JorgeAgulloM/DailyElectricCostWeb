@@ -1,5 +1,25 @@
-.my-video {
+.container {
+    display: flex;
+}
+
+.image {
+    flex: 1;
     float: left;
-    width: 50%;
-    border-radius: 2rem;
+}
+
+.text {
+    flex: 1;
+    float: right;
+    margin: 24px;
+    color: white;
+}
+
+img {
+    display: block;
+    overflow: hidden;
+    object-fit: contain;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0 #369EFF;
+    margin: 24px 0 24px 0 auto;
+    max-width: 100%;
 }
