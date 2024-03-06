@@ -1,15 +1,13 @@
 <section id="features">
-    <div class="container">
-        
-            @for (itemCard of cardData; track $index) {
-                <div class="card">
-                    <i class="{{ itemCard.faIcon }}" aria-hidden="true"></i>
-                    <div class="card-body">
-                        <h4 class="card-title">{{ itemCard.title }}</h4>
-                        <h6 class="card-text">{{ itemCard.text }}</h6>
-                    </div>
+    <div class="container">        
+        @for (itemCard of cardData; track $index) {
+            <div class="card">
+                <i class="{{ itemCard.faIcon }}" aria-hidden="true"></i>
+                <div class="card-body">
+                    <h4 class="card-title">{{ itemCard.title }}</h4>
+                    <h6 class="card-text">{{ itemCard.text }}</h6>
                 </div>
-            }
-        
+            </div>
+        }
     </div>
 </section>
