@@ -10,6 +10,8 @@
 .container {
     display: flex;
     background-color: black;
+    max-width: 1300px;
+    width: 90%;
 }
 
 .card {
@@ -34,11 +36,18 @@
     box-shadow: 0 0 10px 5px #94cbff;
 }
 
-iframe {
-    width: 1120px;
-    height: 630px;
+.embed-container {
+    flex: 1;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
     border-radius: 1rem;
     box-shadow: 0 0 10px 0 #369EFF;
+}
+.embed-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 iframe:hover {
@@ -50,81 +59,4 @@ p {
     top: 50%;
     left: 50%;
     margin: -25px 0 0 -25px;
-}
-
-@media screen and (max-width: 1300px) {
-    iframe {
-        width: 1008px;
-        height: 567px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    iframe {
-        width: 907px;
-        height: 510px;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    iframe {
-        width: 816px;
-        height: 459px;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    iframe {
-        width: 734px;
-        height: 413px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    iframe {
-        width: 661px;
-        height: 372px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    iframe {
-        width: 595px;
-        height: 334px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    iframe {
-        width: 535px;
-        height: 301px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    iframe {
-        width: 482px;
-        height: 271px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    iframe {
-        width: 433px;
-        height: 244px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    iframe {
-        width: 390px;
-        height: 219px;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    iframe {
-        width: 351px;
-        height: 197px;
-    }
 }
