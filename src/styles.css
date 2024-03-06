@@ -22,6 +22,10 @@
     src: url('./assets/fonts/PlusJakartaSans.ttf');
 }
 
+* {
+    box-sizing: border-box;
+}
+
 p {
     font-family: 'plusJakartaSans';
 }
@@ -30,22 +34,6 @@ a {
     text-decoration: none;
     color: white;
 }
-
-/* Body */
-body {
-    display: flex; 
-    justify-content: center;
-    background-color: rgb(28, 44, 66);
-}
-
-.my-body {
-    width: 150ch;
-    margin: 16px;
-    border-radius: 2rem;
-    background-color: black;
-    box-shadow: 0px 0px 8px 2px #94cbff;
-}
-
 
 /* Common Objects */
 
