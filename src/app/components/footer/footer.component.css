@@ -73,15 +73,16 @@ label {
     justify-content: space-evenly;
 }
 
-.privacy a {
+a {
     min-width: 200px;
     margin: 8px;
     text-align: center;
     color: darkgray;
 }
 
-.privacy a:hover {
+a:hover {
     color: white;
+    cursor: pointer;
 }
 
 /* RRSS */
@@ -103,6 +104,7 @@ label {
 
 .rrss i:hover {
     color: #94cbff;
+    cursor: pointer;
 }
 
 /* End line*/
@@ -113,10 +115,6 @@ label {
     margin-top: 8px;
     margin-bottom: 24px;
     justify-content: space-between;
-}
-
-.end p {
-    color: darkgray;
 }
 
 @media screen and (max-width: 830px) {

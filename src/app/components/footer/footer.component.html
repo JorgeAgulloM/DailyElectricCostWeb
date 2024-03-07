@@ -12,15 +12,15 @@
         <div class="privacy">
             <a href="">Política de privacidad</a>
             <a href="">Terminos de uso</a>
-            <a href="">Contacto</a>
+            <a href="" (click)="goToFormContact()" >Contacto con desarrollador</a>
         </div>
         <div class="rrss">
-            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <i (click)="goToSocialNetwork(twitter)" class="fa fa-twitter" aria-hidden="true"></i>
+            <i (click)="goToSocialNetwork(instagram)" class="fa fa-instagram" aria-hidden="true"></i>
+            <i (click)="goToSocialNetwork(youtube)" class="fa fa-youtube" aria-hidden="true"></i>
         </div>
         <div class="end">
-            <p>{{ currentYear }} Daily Electric Cost</p>
+            <a href="" (click)="goToGooglePlay()">{{ currentYear }} Daily Electric Cost</a>
         </div>
     </div>
 </section>

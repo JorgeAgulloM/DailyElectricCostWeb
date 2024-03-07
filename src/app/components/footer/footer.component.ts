@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TWITTER, YOUTUBE, INSTAGRAM } from '../../constants/constants';
+import { CommonActionsService } from '../../services/common-actions.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +12,24 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   currentYear: number;
 
-  constructor() {
+  constructor(private service: CommonActionsService) {
     this.currentYear = new Date().getFullYear();
   }
+
+  twitter = TWITTER;
+  youtube = YOUTUBE;
+  instagram = INSTAGRAM;
+
+  goToGooglePlay(): void {
+    this.service.goToGooglePlay();
+  }
+
+  goToFormContact(): void {
+    this.service.showFormContact();
+  }
+
+  goToSocialNetwork(social: string): void {
+    this.service.goToSocialNetworks(social);
+  }
+
 }
