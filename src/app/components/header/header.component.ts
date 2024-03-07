@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonActionsService } from '../../services/common-actions.service';
 
 @Component({
   selector: 'app-header',
@@ -9,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private service: CommonActionsService) { }
+
+  goToGooglePlay(): void {
+    this.service.goToGooglePlay();
+  }
+
+  nextToReading(): void {
+    console.log('Estamos trabajando en ello!')
+  }
+  
 }
