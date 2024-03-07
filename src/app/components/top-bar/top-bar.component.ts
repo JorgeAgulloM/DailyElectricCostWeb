@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonActionsService } from '../../services/common-actions.service';
+import { INSTAGRAM, TWITTER, YOUTUBE } from '../../constants/constants';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,9 +11,22 @@ import { Component } from '@angular/core';
 })
 export class TopBarComponent {
 
+  constructor(private service: CommonActionsService) {}
+
+  twitter = TWITTER;
+  youtube = YOUTUBE;
+  instagram = INSTAGRAM;
+
   goToGooglePlay(): void {
-    window.open('https://play.google.com/store/apps/details?id=com.softyorch.dailyelectriccost', '_blanck')
+    this.service.goToGooglePlay();
   }
 
+  goToFormContact(): void {
+    this.service.showFormContact();
+  }
+
+  goToSocialNetwork(social: string): void {
+    this.service.goToSocialNetworks(social);
+  }
 
 }
