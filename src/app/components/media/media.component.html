@@ -1,12 +1,20 @@
 <section>
     <ul class="container">
-        @for (data of cardData; track $index) {
+        @for (data of cardData; track $index) {            
             <div class="card">
-                <img src="{{ data.image }}" class="card-img-top" alt="" />
+                <img (click)="changeState($index)" src="{{ data.image }}" class="card-img-top" alt="" />
                 <div class="card-body">
                     <h6 class="card-title">{{ data.title }}</h6>
                 </div>
             </div>
+            @if (data.active) {
+                <div class="my-modal">
+                    <div class="modal-btn">
+                        <button (click)="closeModal()" class="my-btn my-btn-secondary">X</button>
+                    </div>
+                    <img src="{{ data.image_lager }}" alt="">
+                </div>
+            }
         }
     </ul>
     <div class="container">
