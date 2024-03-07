@@ -1,6 +1,9 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-black" id="myNavbar" aria-label="navbarSupportedContent">
     <div class="container-fluid">
-      <a class="navbar-brand">DailyElectricCost</a>
+      <div class="navbar-brand">
+        <img src=".\assets\img\captures\low\bombilla_low.png" alt="">
+        <a (click)="goToGooglePlay()" href="">DailyElectricCost</a>
+      </div>
       <button class="navbar-toggler" 
               type="button" data-bs-toggle="collapse" 
               data-bs-target="#navbarSupportedContent" 
@@ -14,8 +17,8 @@
           <button class="my-btn my-btn-active" (click)="goToGooglePlay()" type="submit">Descarga desde Google Play</button>
           <button class="my-btn my-btn-secondary" (click)="goToFormContact()" type="submit">Contacto con Desarrollador</button>
           <button class="my-btn my-btn-icon" (click)="goToSocialNetwork(twitter)" type="submit"><i class="fa fa-twitter" aria-hidden="true"></i></button>
-          <button class="my-btn my-btn-icon" (click)="goToSocialNetwork(youtube)" type="submit"><i class="fa fa-instagram" aria-hidden="true"></i></button>
-          <button class="my-btn my-btn-icon" (click)="goToSocialNetwork(instagram)" type="submit"><i class="fa fa-youtube" aria-hidden="true"></i></button>
+          <button class="my-btn my-btn-icon" (click)="goToSocialNetwork(instagram)" type="submit"><i class="fa fa-instagram" aria-hidden="true"></i></button>
+          <button class="my-btn my-btn-icon" (click)="goToSocialNetwork(youtube)" type="submit"><i class="fa fa-youtube" aria-hidden="true"></i></button>
         </form>
       </div>
     </div>
