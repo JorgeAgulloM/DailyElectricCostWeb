@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class TopBarComponent {
 
+  goToGooglePlay(): void {
+    window.open('https://play.google.com/store/apps/details?id=com.softyorch.dailyelectriccost', '_blanck')
+  }
+
+
 }
