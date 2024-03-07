@@ -11,23 +11,23 @@ export class MediaComponent {
 
   cardData = [
     {
-      image: './assets/img/captures/image_01.jpg',
+      image: './assets/img/captures/low/image_01_low.jpg',
       title: "Precios de un solo vistazo"
     },
     {
-      image: './assets/img/captures/image_02.jpg',
+      image: './assets/img/captures/low/image_02_low.jpg',
       title: "Establece alertas"
     },
     {
-      image: './assets/img/captures/image_07.jpg',
+      image: './assets/img/captures/low/image_07_low.jpg',
       title: "Moodo oscuro"
     },
     {
-      image: './assets/img/captures/image_04.jpg',
+      image: './assets/img/captures/low/image_04_low.jpg',
       title: "Como se crea tu energía"
     },
     {
-      image: './assets/img/captures/image_05.jpg',
+      image: './assets/img/captures/low/image_05_low.jpg',
       title: "Históarico diario"
     },
   ]
