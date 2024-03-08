@@ -69,6 +69,7 @@ p {
 .my-modal {
     position: absolute;
     width: 70.5%;
+    max-width: 1280px;
     z-index: 10;
     background-color: #030a11f4;
     border-radius: 2rem;
@@ -102,6 +103,12 @@ img {
     border-radius: 2rem;
 }
 
+.my-modal img {
+    margin-bottom: 64px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #94cbff;
+}
+
 .my-btn-secondary {
     padding-left: 16px;
     padding-right: 16px;
@@ -133,7 +140,7 @@ img {
 
 @media screen and (max-width: 600px) {
     .card {
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin-bottom: 8px;
     }
 
@@ -144,5 +151,33 @@ img {
 
     h6 {
         font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    h6 {
+        font-size: larger;
+    }
+}
+
+@media screen and (max-width: 410px) {
+
+    h6 {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    h6 {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    h6 {
+        font-size: small;
     }
 }
