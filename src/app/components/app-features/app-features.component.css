@@ -86,19 +86,27 @@ i {
 
     .my-modal {
         width: 70.25%;
-        height: 23%;
+        height: 65%;
     }
 }
 
 @media screen and (max-width: 865px) {
     .my-modal {
         width: 69%;
+        height: 67%;
     }
 }
 
 @media screen and (max-width: 600px) {
     .my-modal {
         width: 68%;
-        height: 25%;
     }
 }
+
+@media screen and (max-width: 585px) {
+    .my-modal {
+        width: 68%;
+        height: 68%;
+    }
+}
+

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { distinctUntilChanged, tap } from "rxjs";
 @Component({
   selector: 'app-app-features',
   standalone: true,
@@ -7,9 +8,14 @@ import { Component } from '@angular/core';
   templateUrl: './app-features.component.html',
   styleUrl: './app-features.component.css'
 })
-export class AppFeaturesComponent {
+export class AppFeaturesComponent implements OnInit {
 
   private lastImageShow = 0;
+  private Breakpoints = Breakpoints;
+  public currentBreakpoint: string = "";
+  public limitLarge: string = "(min-width: 865px)";
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
     changeState(select: number): void {
     switch(select) {
@@ -87,5 +93,24 @@ export class AppFeaturesComponent {
                 "En resumen, nuestra misión es brindarte una visión clara del panorama energético español para que puedas tomar decisiones informadas y estar al tanto de la situación general de la red eléctrica. Agradecemos tu confianza en Daily Electric Cost y estamos comprometidos a seguir trabajando arduamente para proporcionarte la mejor experiencia posible basada en información veraz y actualizada."
     },
   ]
+
+  readonly breakpoint$ = this.breakpointObserver
+  .observe([Breakpoints.Large, this.limitLarge])
+  .pipe(
+    tap((value) => console.log(value)),
+    distinctUntilChanged()
+  );
+
+  ngOnInit(): void {
+    this.breakpoint$.subscribe(() => this.breakpointChanged());
+  }
+
+  private breakpointChanged() {
+    if (this.breakpointObserver.isMatched(this.limitLarge)) {
+      this.currentBreakpoint = this.limitLarge;
+    } else {
+      this.currentBreakpoint = Breakpoints.Large;
+    }
+  }
 
 }
