@@ -45,7 +45,7 @@ export class AppFeaturesComponent {
   cardData = [
     {
       faIcon: "fa fa-bar-chart",
-      title: "En Tiempo Real",
+      title: "Tiempo Real",
       active: false,
       text: "Revisa los precios establecidos para hoy, y para mañana.",
       textLarge: "Con DailyElectricCost obtendrás lo precios de día para que puedas elegir a que hora conectar tus electrodomésticos y de esa anera ahorra un poquito " +
@@ -70,7 +70,7 @@ export class AppFeaturesComponent {
     },
     {
       faIcon: "fa fa-gear",
-      title: "Personalización",
+      title: "Custom",
       active: false,
       text: "Personaliza la app usando el modo oscuro y los colores de tu dispositivo.",
       textLarge: "Puedes personalizar la app usando el modo oscuro, o manteniendo el modo automático, DailyElectricCost se adaptará al estado de tu dispositivo." +
@@ -80,10 +80,10 @@ export class AppFeaturesComponent {
       faIcon: "fa fa-pencil",
       title: "Compromiso",
       active: false,
-      text: "Personaliza la app usando el modo oscuro y los colores de tu dispositivo.",
-      textLarge: "Daily Electric Cost te da la bienvenida ofreciéndote información en tiempo real sobre el coste y la red eléctrica en España. Nos comprometemos a ser transparentes y a garantizar que la información que recibes proviene de una fuente confiable, la Red Eléctrica de España (REE), el operador del sistema eléctrico español." +
-                "Nuestra aplicación obtiene datos a través del API proporcionado por la REE, lo que nos permite ofrecerte información precisa y actualizada sobre el precio del kWh, la generación de energía, la disponibilidad de recursos renovables y otros indicadores relevantes para el suministro eléctrico. Esta información se presenta de manera clara y sencilla para facilitar tu comprensión." +
-                "Además, en Daily Electric Cost entendemos la importancia de proporcionarte una experiencia confiable y enriquecedora. Por ello, nos esforzamos por mantener nuestros datos actualizados y precisos, asegurándonos de obtenerlos directamente de la fuente oficial. Queremos que te sientas seguro al tomar decisiones informadas sobre tu consumo eléctrico." +
+      text: "Personaliza la app usando el modo oscuro y los colores de tu dispositivo.\n\n",
+      textLarge: "Daily Electric Cost te da la bienvenida ofreciéndote información en tiempo real sobre el coste y la red eléctrica en España. Nos comprometemos a ser transparentes y a garantizar que la información que recibes proviene de una fuente confiable, la Red Eléctrica de España (REE), el operador del sistema eléctrico español.\n\n" +
+                "Nuestra aplicación obtiene datos a través del API proporcionado por la REE, lo que nos permite ofrecerte información precisa y actualizada sobre el precio del kWh, la generación de energía, la disponibilidad de recursos renovables y otros indicadores relevantes para el suministro eléctrico. Esta información se presenta de manera clara y sencilla para facilitar tu comprensión.\n\n" +
+                "Además, en Daily Electric Cost entendemos la importancia de proporcionarte una experiencia confiable y enriquecedora. Por ello, nos esforzamos por mantener nuestros datos actualizados y precisos, asegurándonos de obtenerlos directamente de la fuente oficial. Queremos que te sientas seguro al tomar decisiones informadas sobre tu consumo eléctrico.\n\n" +
                 "En resumen, nuestra misión es brindarte una visión clara del panorama energético español para que puedas tomar decisiones informadas y estar al tanto de la situación general de la red eléctrica. Agradecemos tu confianza en Daily Electric Cost y estamos comprometidos a seguir trabajando arduamente para proporcionarte la mejor experiencia posible basada en información veraz y actualizada."
     },
   ]

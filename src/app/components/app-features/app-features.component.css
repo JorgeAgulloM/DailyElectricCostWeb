@@ -35,6 +35,7 @@ i {
 .my-modal {
     position: absolute;
     width: 70.5%;
+    max-width: 1250px;
     z-index: 10;
     background-color: #030a11f4;
     border-radius: 2rem;
@@ -74,17 +75,22 @@ i {
     margin: 16px;
 }
 
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 1400px) {
     .container {
         flex-direction: column;
     }
 
     .card {
-        pointer-events: none;
-        cursor: default;
         max-width: 100%;
     }
 
+    .my-modal {
+        width: 70.25%;
+        height: 23%;
+    }
+}
+
+@media screen and (max-width: 865px) {
     .my-modal {
         width: 69%;
     }
@@ -93,5 +99,6 @@ i {
 @media screen and (max-width: 600px) {
     .my-modal {
         width: 68%;
+        height: 25%;
     }
 }
