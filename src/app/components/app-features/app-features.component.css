@@ -32,12 +32,66 @@ i {
     color: white;
 }
 
+.my-modal {
+    position: absolute;
+    width: 70.5%;
+    z-index: 10;
+    background-color: #030a11f4;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 1px #369EFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 24px;
+    animation: fadeIn 0.5s ease;
+}
+
+.my-modal .card {
+    max-width: 90%;
+}
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0;
+        filter: blur(20px);
+    }
+
+    10% {
+        opacity: 1;
+        filter: brightness(2) blur(10px);
+    }
+}
+
+.modal-btn {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.my-btn-secondary {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 16px;
+}
+
 @media screen and (max-width: 865px) {
     .container {
         flex-direction: column;
     }
 
     .card {
+        pointer-events: none;
+        cursor: default;
         max-width: 100%;
+    }
+
+    .my-modal {
+        width: 69%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .my-modal {
+        width: 68%;
     }
 }
