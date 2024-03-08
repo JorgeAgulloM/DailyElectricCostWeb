@@ -29,7 +29,7 @@ export class MediaComponent {
     {
       image: './assets/img/captures/low/image_07_low.jpg',
       image_lager: './assets/img/captures/image_07_mid.jpg',
-      title: "Moodo oscuro",
+      title: "Modo oscuro",
       text: "¿Te molesta la luz? a nosotros también, por eso todas nuestras apps posen el ajuste de modo oscuro tanto manual como automático.",
       active: false
     },
@@ -43,7 +43,7 @@ export class MediaComponent {
     {
       image: './assets/img/captures/low/image_05_low.jpg',
       image_lager: './assets/img/captures/image_05_mid.jpg',
-      title: "Históarico diario",
+      title: "Histórico diario",
       text: "Otra forma de ver los precios diários y los días anteriores.",
       active: false
     },
