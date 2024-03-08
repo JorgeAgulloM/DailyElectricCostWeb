@@ -66,6 +66,10 @@ p {
     position: absolute;
 }
 
+.card-text {
+    visibility: hidden;
+}
+
 .my-modal {
     position: absolute;
     width: 70.5%;
@@ -130,15 +134,63 @@ img {
         float: left;
         width: 50%;
     }
+    
+    p {
+        position: relative;
+    }
 
-    h6 {
+    .card-body {
+        flex: 1;
+        font-size: large;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
         flex: 1;
         float: left;
+        font-size: larger;
+        color: whitesmoke;
+    }
+
+    .card-text {
+        margin-top: 32px;
+        position: absolute;
+        visibility: visible;
+        color: darkgray;
+    }
+
+}
+
+@media screen and (max-width: 815px) {
+    .card-title {
         font-size: large;
+    }
+
+    p {
+        font-size: medium; 
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 715px) {
+    .card-title {
+        font-size: medium;
+    }
+
+    p {
+        font-size: smaller
+    }
+
+@media screen and (max-width: 650px) {
+    .card-title {
+        font-size: smaller;
+    }
+
+    p {
+        font-size: small;
+    }
+
+@media screen and (max-width: 612px) {
     .card {
         flex-direction: column-reverse;
         margin-bottom: 8px;
@@ -151,6 +203,10 @@ img {
 
     h6 {
         font-size: x-large;
+    }
+
+    .card-text {
+        visibility: hidden;
     }
 }
 

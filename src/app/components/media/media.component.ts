@@ -16,30 +16,35 @@ export class MediaComponent {
       image: './assets/img/captures/low/image_01_low.jpg',
       image_lager: './assets/img/captures/image_01_mid.jpg',
       title: "Precios de un solo vistazo",
+      text: "Podrás revisar todos lo precios del día de una forma fácil y rápida para decidir a que horas debe usar tus electrodomésticos.",
       active: false
     },
     {
       image: './assets/img/captures/low/image_02_low.jpg',
       image_lager: './assets/img/captures/image_02_mid.jpg',
       title: "Establece alertas",
+      text: "Podrás establecer tus alertas para los precios que desees de todo el día. Además, a partir de las 20:30 R.E.E publica los precios del día siguiete y podrás establecer alertas para mañana.",
       active: false
     },
     {
       image: './assets/img/captures/low/image_07_low.jpg',
       image_lager: './assets/img/captures/image_07_mid.jpg',
       title: "Moodo oscuro",
+      text: "¿Te molesta la luz? a nosotros también, por eso todas nuestras apps posen el ajuste de modo oscuro tanto manual como automático.",
       active: false
     },
     {
       image: './assets/img/captures/low/image_04_low.jpg',
       image_lager: './assets/img/captures/image_04_mid.jpg',
       title: "Como se crea tu energía",
+      text: "Averigüa de un vistazo como se genera la luz que estás consumiendo, no es muy útil para tu día a día pero es interesante.",
       active: false
     },
     {
       image: './assets/img/captures/low/image_05_low.jpg',
       image_lager: './assets/img/captures/image_05_mid.jpg',
       title: "Históarico diario",
+      text: "Otra forma de ver los precios diários y los días anteriores.",
       active: false
     },
   ];
