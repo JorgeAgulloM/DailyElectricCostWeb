@@ -7,9 +7,9 @@
                     <h4 class="card-title">{{ itemCard.title }}</h4>
                     <h6 class="card-text">
                         @if (currentBreakpoint != limitLarge && itemCard.active) {
-                        {{ itemCard.textLarge }}
+                            {{ itemCard.textLarge }}
                         } @else {
-                        {{ itemCard.text }}
+                            {{ itemCard.text }}
                         }
                     </h6>
                 </div>
@@ -18,11 +18,11 @@
             @if (currentBreakpoint === limitLarge && itemCard.active) {
                 <div class="my-modal">
                     <div class="modal-btn">
-                        <button (click)="closeModal()" class="my-btn my-btn-secondary">X</button>
+                        <button (click)="changeState($index)" class="my-btn my-btn-secondary">X</button>
                     </div>
                     <div class="card">
                         <i class="{{ itemCard.faIcon }}" aria-hidden="true"></i>
-                        <div (click)="closeModal()" class="card-body">
+                        <div (click)="changeState($index)" class="card-body">
                             <h4 class="card-title">{{ itemCard.title }}</h4>
                             <h6 class="card-text">{{ itemCard.textLarge }}</h6>
                         </div>

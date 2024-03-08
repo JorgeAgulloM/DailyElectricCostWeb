@@ -86,7 +86,8 @@ i {
 
     .my-modal {
         width: 70.25%;
-        height: 65%;
+        height: 35%;
+        max-height: 650px;
     }
 }
 
