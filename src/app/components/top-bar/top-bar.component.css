@@ -5,3 +5,15 @@
 .collapse {
     justify-content: end;
 }
+
+@media screen and (max-width: 280px) {
+    .navbar-brand a {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 220px) {
+    .navbar-brand a {
+        font-size: small;
+    }
+}
