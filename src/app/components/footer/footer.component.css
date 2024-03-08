@@ -15,21 +15,28 @@
 .input-container {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    padding-left: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .right-button {
     position: absolute;
     right: 0;
-    margin-top: 5.5%;
-    margin-right: 8px;
-}
-
-.input-field {
-    padding-left: 30px;
+    align-self: end;
+    margin-top: 8px;
+    margin-right: 14px;
 }
 
 input {
-    width: 100%;
+    width: 98%;
+    margin: 0 auto;
     margin-top: 16px;
     margin-bottom: 48px;
     border-radius: 3rem;
@@ -121,16 +128,30 @@ a:hover {
     .privacy {
         flex-direction: column;
     }
-}
 
-@media screen and (max-width: 575px) {
-    input {
-        margin-bottom: 8px;
+    .input-field {
+        padding-left: 16px;
+        padding-right: 16px;
+        max-height: 40px;
     }
 
     .right-button {
         position: relative;
         width: 98.5%;
         margin: 1%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    input {
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .footer a, i {
+        font-size: x-small;
+        min-width: 150px;
+        margin: 0;
     }
 }
