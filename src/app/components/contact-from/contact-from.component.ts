@@ -25,10 +25,18 @@ export class ContactFromComponent  {
 
   onSubmit(): void {
     this.service.contactWithDeveloper(this.formData);
+
     this.formData.email = "";
     this.formData.name = "";
     this.formData.context = "";
+    
     this.closeContactForm();
+
+    Swal.fire({
+      title: "Formulario enviado!",
+      text: "Gracias, nos pondremos en contacto lo antes posible.",
+      icon: "success"
+    });
   }
 
   closeContactForm(): void {
