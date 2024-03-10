@@ -23,25 +23,30 @@ export class FooterComponent {
   youtube = YOUTUBE;
   instagram = INSTAGRAM;
 
-  goToGooglePlay(): void {
+  goToGooglePlay(event: MouseEvent): void {
+    event.preventDefault();
     this.service.goToGooglePlay();
   }
 
-  goToFormContact(): void {
-    this.service.showFormContact();
+  showToFormContact(event: MouseEvent): void {
+    event.preventDefault();
+    this.service.toggleContactFormVisibility(true);
   }
 
-  goToSocialNetwork(social: string): void {
+  goToSocialNetwork(event: MouseEvent, social: string): void {
+    event.preventDefault();
     this.service.goToSocialNetworks(social);
   }
 
-  goToPrivacyPolicy(): void {
+  goToPrivacyPolicy(event: MouseEvent): void {
+    event.preventDefault();
     this.service.goToPrivacyPolicy();
   }
 
-  getUseTermsText(): void {
+  getUseTermsText(event: MouseEvent): void {
+    event.preventDefault();
     if (this.showUseTermsFile) {
-      this.closeUseTerms();
+      this.closeUseTerms(event);
     } else {
       this.service.readUseTerms()
       .then(content => {
@@ -55,7 +60,8 @@ export class FooterComponent {
     }
   }
 
-  closeUseTerms(): void {
+  closeUseTerms(event: MouseEvent): void {
+    event.preventDefault();
     this.showUseTermsFile = false;
     this.useTermFile = undefined;
   }
