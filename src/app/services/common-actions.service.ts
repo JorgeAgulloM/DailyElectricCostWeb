@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { SocialNetwork } from '../models/social-networks';
 import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, PRIVACY_POLICY_LINK, TWITTER, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from './../constants/constants';
+import { FormData } from '../models/form-data';
+import { Observable, Subject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonActionsService {
+
+  private formContactVisibility = new Subject<boolean>();
 
   goToGooglePlay(): void {
     this.goToSomewere(GOOGLE_PLAY_APP_LINK);
@@ -29,14 +33,28 @@ export class CommonActionsService {
     }
   }
 
-  showFormContact(): void {
-    console.log('Todavia no está listo');
-  }
-
   goToPrivacyPolicy(): void {
     this.goToSomewere(PRIVACY_POLICY_LINK);
   }
 
+  readUseTerms(): Promise<string> {
+    const filePath = './assets/docs/useTerms.txt'; //src\assets\docs\useTerms.txt
+    return fetch(filePath).then(res => res.text())
+  }
+
+  contactWithDeveloper(formData: FormData): void {
+    console.log(formData);
+  }
+
+  toggleContactFormVisibility(show: boolean) {
+    console.log(`toggleContactFormVisibility param value: ${show}`)
+    this.formContactVisibility.next(show);
+  }
+
+  getContactFormVisibility(): Observable<boolean> {
+    return this.formContactVisibility.asObservable();
+  }
+  
   private goToSomewere(link: string): void {
     if (this.isGoogdLink(link)) {
       window.open(link, '_blanck');
@@ -46,11 +64,6 @@ export class CommonActionsService {
   private isGoogdLink(link: string): boolean {
     const regex = /^(ftp|http|https):\/\/[^ "]+$/;
     return regex.test(link);
-  }
-
-  readUseTerms(): Promise<string> {
-    const filePath = './assets/docs/useTerms.txt'; //src\assets\docs\useTerms.txt
-    return fetch(filePath).then(res => res.text())
   }
 
 }
