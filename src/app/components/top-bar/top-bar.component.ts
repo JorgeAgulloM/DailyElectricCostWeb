@@ -17,15 +17,18 @@ export class TopBarComponent {
   youtube = YOUTUBE;
   instagram = INSTAGRAM;
 
-  goToGooglePlay(): void {
+  goToGooglePlay(event: MouseEvent): void {
+    event.preventDefault();
     this.service.goToGooglePlay();
   }
 
-  goToFormContact(): void {
-    this.service.showFormContact();
+  showToFormContact(event: MouseEvent): void {
+    event.preventDefault();
+    this.service.toggleContactFormVisibility(true);
   }
 
-  goToSocialNetwork(social: string): void {
+  goToSocialNetwork(event: MouseEvent, social: string): void {
+    event.preventDefault();
     this.service.goToSocialNetworks(social);
   }
 
