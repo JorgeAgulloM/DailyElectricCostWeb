@@ -10,9 +10,9 @@
 
     <div class="footer">
         <div class="privacy">
-            <a href="">Política de privacidad</a>
-            <a href="">Terminos de uso</a>
-            <a href="" (click)="goToFormContact()" >Contacto con desarrollador</a>
+            <a class="disabled-link" (click)="goToPrivacyPolicy()">Política de privacidad</a>
+            <a class="disabled-link" (click)="getUseTermsText()">Terminos de uso</a>
+            <a class="disabled-link" (click)="goToFormContact()" >Contacto con desarrollador</a>
         </div>
         <div class="rrss">
             <i (click)="goToSocialNetwork(twitter)" class="fa fa-twitter" aria-hidden="true"></i>
@@ -20,7 +20,14 @@
             <i (click)="goToSocialNetwork(youtube)" class="fa fa-youtube" aria-hidden="true"></i>
         </div>
         <div class="end">
-            <a href="" (click)="goToGooglePlay()">{{ currentYear }} Daily Electric Cost</a>
+            <a class="disabled-link" (click)="goToGooglePlay()">{{ currentYear }} Daily Electric Cost</a>
         </div>
+        @if (showUseTermsFile) {
+            <div class="use-terms">
+                <button (click)="closeUseTerms()" class="my-btn my-btn-secondary">X</button>
+                <h3>Términos y Condiciones de Uso</h3>
+                <pre>{{ useTermFile }}</pre>
+            </div>
+        }
     </div>
 </section>

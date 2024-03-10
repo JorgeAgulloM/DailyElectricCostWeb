@@ -11,8 +11,11 @@ import { CommonActionsService } from '../../services/common-actions.service';
 })
 export class FooterComponent {
   currentYear: number;
+  useTermFile: string | undefined;
+  showUseTermsFile: boolean = false;
 
-  constructor(private service: CommonActionsService) {
+  constructor(
+    private service: CommonActionsService) {
     this.currentYear = new Date().getFullYear();
   }
 
@@ -30,6 +33,31 @@ export class FooterComponent {
 
   goToSocialNetwork(social: string): void {
     this.service.goToSocialNetworks(social);
+  }
+
+  goToPrivacyPolicy(): void {
+    this.service.goToPrivacyPolicy();
+  }
+
+  getUseTermsText(): void {
+    if (this.showUseTermsFile) {
+      this.closeUseTerms();
+    } else {
+      this.service.readUseTerms()
+      .then(content => {
+        this.useTermFile = content;
+      })
+      .catch(error => console.log('Error reading file:', error))
+      .finally(() => {
+        this.showUseTermsFile = true;
+        console.log('text:', this.useTermFile)
+      });
+    }
+  }
+
+  closeUseTerms(): void {
+    this.showUseTermsFile = false;
+    this.useTermFile = undefined;
   }
 
 }
