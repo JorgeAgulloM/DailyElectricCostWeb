@@ -37,9 +37,10 @@ export class CommonActionsService {
     this.goToSomewere(PRIVACY_POLICY_LINK);
   }
 
-  readUseTerms(): Promise<string> {
+  async readUseTerms(): Promise<string> {
     const filePath = './assets/docs/useTerms.txt'; //src\assets\docs\useTerms.txt
-    return fetch(filePath).then(res => res.text())
+    const res = await fetch(filePath);
+    return await res.text();
   }
 
   contactWithDeveloper(formData: FormData): void {
