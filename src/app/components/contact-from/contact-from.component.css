@@ -1,0 +1,30 @@
+.content-form {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    padding: 16px;
+    flex-direction: column;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 1px #369EFF;
+    transition: ease-in-out 1;
+    
+    background-color: var(--background-app);
+}
+
+.content-form h6 {
+    color: whitesmoke;
+    margin: 8px;
+}
+
+.content-form label, p {
+    color: whitesmoke;
+    margin-left: 16px;
+}
+
+.my-btn {
+    float: right;
+    padding-left: 16px;
+    padding-right: 16px;
+}

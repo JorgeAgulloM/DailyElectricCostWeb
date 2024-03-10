@@ -1,0 +1,24 @@
+
+    <div class="content-form">
+        <form (ngSubmit)="onSubmit()">
+            <h6>Por favor, rellene el cuestionario para contactar con el desarrollador</h6>
+            <div >
+                <div class="mb-3">
+                    <label for="email" class="form-label">Introduce tu email</label>
+                    <input type="mail" class="form-control" placeholder="Dirección de correo" name="email" id="email" [(ngModel)]="formData.email">
+                    <p id="emailHelp" class="form-text">Nunca compartiremos tu email con nadie.</p>
+                </div>
+                <div>
+                    <label for="name" class="form-label">Introduce tu nombre</label>
+                    <input type="text" class="form-control" placeholder="Nombre y apellidos" name="name" id="name" [(ngModel)]="formData.name">
+                </div>
+                <br>
+                <div>
+                    <label for="context" class="form-label">Motivo de contacto</label>
+                    <input type="text" class="form-control" placeholder="Motivo del contacto..." name="context" id="context" [(ngModel)]="formData.context">
+                </div>
+                <br>
+                <button class="my-btn my-btn-active">Enviar</button>
+            </div>
+        </form>
+    </div>
