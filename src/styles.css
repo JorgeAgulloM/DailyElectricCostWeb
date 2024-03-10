@@ -15,6 +15,8 @@
     --btn-icon-text-color: #FFFFFF;
     --btn-icon-hover-text-color: #369EFF;
     --btn-icon-shadow-bg-color: #94cbff;
+
+    --background-app: rgb(28, 44, 66)
 }
 
 @font-face {
@@ -27,7 +29,7 @@
 }
 
 body {
-    background-color: rgb(28, 44, 66);
+    background-color: var(--background-app);
 }
 
 p {
