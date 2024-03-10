@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SocialNetwork } from '../models/social-networks';
-import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, TWITTER, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from './../constants/constants';
+import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, PRIVACY_POLICY_LINK, TWITTER, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from './../constants/constants';
 
 
 @Injectable({
@@ -25,17 +25,21 @@ export class CommonActionsService {
         this.goToSomewere(INSTAGRAM_ACCOUNT_LINK);
         break;
       default:
-        console.log('Not search Social Network')
+        console.log('Not search Social Network');
     }
   }
 
   showFormContact(): void {
-    console.log('Todavia no está listo')
+    console.log('Todavia no está listo');
+  }
+
+  goToPrivacyPolicy(): void {
+    this.goToSomewere(PRIVACY_POLICY_LINK);
   }
 
   private goToSomewere(link: string): void {
     if (this.isGoogdLink(link)) {
-      window.open(link, '_blanck')
+      window.open(link, '_blanck');
     }
   }
 
@@ -43,4 +47,10 @@ export class CommonActionsService {
     const regex = /^(ftp|http|https):\/\/[^ "]+$/;
     return regex.test(link);
   }
+
+  readUseTerms(): Promise<string> {
+    const filePath = './assets/docs/useTerms.txt'; //src\assets\docs\useTerms.txt
+    return fetch(filePath).then(res => res.text())
+  }
+
 }
