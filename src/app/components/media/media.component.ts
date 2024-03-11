@@ -42,7 +42,7 @@ export class MediaComponent implements OnInit {
     {
       image: "./assets/img/captures/low/image_04_low.jpg",
       image_lager: "./assets/img/captures/image_04_mid.jpg",
-      title: "Como se crea tu energía",
+      title: "Cómo se crea tu energía",
       text: "Averigüa de un vistazo como se genera la luz que estás consumiendo, no es muy útil para tu día a día pero es interesante.",
       active: false,
     },
