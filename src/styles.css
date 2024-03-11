@@ -58,7 +58,7 @@ a {
 
 .my-btn-active:hover {
     color: var(--btn-active-hover-text-color);
-    box-shadow: 2px 4px 8px var(--btn-active-hover-shadow-bg-color);
+    box-shadow: 0 0 10px 1px var(--btn-active-hover-shadow-bg-color);
     transform: scale(1.01);
 }
 
@@ -69,7 +69,7 @@ a {
 
 .my-btn.my-btn-secondary:hover {
     color: var(--btn-secondary-hover-text-color);
-    box-shadow: 2px 4px 8px var(--btn-secondary-shadow-bg-color);
+    box-shadow: 0 0 10px 1px var(--btn-secondary-shadow-bg-color);
     transform: scale(1.01);
 }
 
@@ -84,6 +84,18 @@ a {
 
 .my-btn-icon:hover {
     color: var(--btn-icon-hover-text-color);
-    box-shadow: 2px 4px 8px var(--btn-icon-shadow-bg-color);
+    box-shadow: 0 0 10px 1px var(--btn-icon-shadow-bg-color);
     transform: scale(1.01);
+}
+
+
+@media screen and (max-width: 280px) {
+    .my-btn {
+        font-size: x-small;
+    }
+
+    .my-btn-icon {
+        font-size: x-small;
+    }
+
 }

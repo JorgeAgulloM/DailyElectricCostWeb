@@ -47,3 +47,16 @@
         filter: brightness(2) blur(10px);
     }
 }
+
+@media screen and (max-width: 430px) {
+    .content-form {
+        width: 95%;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .content-form {
+        position: relative;
+        margin-top: 40%;
+    }
+}

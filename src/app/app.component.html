@@ -17,15 +17,14 @@
     <app-app-features></app-app-features>
     <br>
     <app-footer></app-footer>
-  </div>
-
-  @if (showContactForm) {
-    <div class="my-body-modal">
-      <div class="my-modal">
-        <app-contact-from></app-contact-from>
+    @if (showContactForm) {
+      <div class="my-body-modal">
+        <div class="my-modal">
+          <app-contact-from></app-contact-from>
+        </div>
       </div>
-    </div>
-  }
+    }
+  </div>
 
 </body>
 </html>

@@ -6,6 +6,22 @@
     justify-content: end;
 }
 
+@media screen and (max-width: 1055px) {
+    .container-fluid {
+        padding: 0;
+    }
+
+    .navbar-brand a {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .navbar {
+        border-radius: 0;
+    }
+}
+
 @media screen and (max-width: 280px) {
     .navbar-brand a {
         font-size: medium;

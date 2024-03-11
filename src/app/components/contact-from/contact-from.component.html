@@ -11,9 +11,8 @@
                 <div *ngIf="form.controls['email'].errors?.['email'] && (form.controls['email'].dirty || form.controls['email'].touched)" class="text-danger">
                     El email debe tener un formato válido.
                 </div>
-                <p id="emailHelp" class="form-text">Nunca compartiremos tu email con nadie.</p>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="name" class="form-label">Introduce tu nombre (mínimo 4 caracteres)</label>
                 <input type="text" class="form-control" placeholder="Nombre y apellidos" name="name" id="name" [(ngModel)]="formData.name" required minlength="4" [maxlength]="50">
                 <div *ngIf="form.controls['name'].errors?.['required'] && (form.controls['name'].dirty || form.controls['name'].touched)" class="text-danger">
@@ -26,8 +25,7 @@
                     Caracteres restantes: {{ 50 - formData.name.length }}
                 </div>
             </div>
-            <br>
-            <div>
+            <div class="mb-3">
                 <label for="context" class="form-label">Motivo de contacto (mínimo 50 caracteres)</label>
                 <textarea class="form-control" placeholder="Motivo del contacto..." name="context" id="context" [(ngModel)]="formData.context" [maxlength]="500" required minlength="50"></textarea>
                 <div *ngIf="form.controls['context'].errors?.['required'] && (form.controls['context'].dirty || form.controls['context'].touched)" class="text-danger">
@@ -40,7 +38,6 @@
                     Caracteres restantes: {{ 500 - formData.context.length }}
                 </div>
             </div>
-            <br>
             <button type="submit" class="my-btn" [ngClass]="{'my-btn-active': form.valid, 'my-btn-disabled': form.invalid}" [disabled]="form.invalid">Enviar</button>
             <button type="button" class="my-btn my-btn-secondary" (click)="closeContactForm()">Cancelar</button>
         </div>
