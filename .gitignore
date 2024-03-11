@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# File control admob
+src/app-ads.txt
+
+# Firebase build
+.firebase
