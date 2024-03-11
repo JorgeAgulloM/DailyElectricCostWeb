@@ -33,7 +33,7 @@ body {
 }
 
 p {
-    font-family: 'plusJakartaSans';
+    font-family: 'plusJakartaSans', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 a {
