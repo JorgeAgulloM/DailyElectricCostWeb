@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonActionsService } from '../../services/common-actions.service';
+import { BackendService } from '../../services/backend/backend.service';
 import { FormData } from '../../models/form-data';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';
@@ -15,28 +16,45 @@ import Swal from 'sweetalert2';
 })
 export class ContactFromComponent  {
 
-  constructor(private service: CommonActionsService) {}
+  constructor(
+    private service: CommonActionsService,
+    private backedSrv: BackendService
+  ) {}
 
   formData: FormData = {
     email:  "",
     name: "",
-    context: ""
+    content: ""
+  }
+
+  ping(): void {
+    this.backedSrv.sendPing().subscribe(
+      response => console.log(`response: ${response.message}`), 
+      error => console.log(`error: ${error.error}`)
+    )
   }
 
   onSubmit(): void {
-    this.service.contactWithDeveloper(this.formData);
+    this.backedSrv.sendContactDeveloper(this.formData).subscribe(
+      response => Swal.fire({
+        title: "Formulario enviado!",
+        text: "Gracias, nos pondremos en contacto lo antes posible.",
+        icon: "success"
+      }), 
+      error => Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      })
+    )
 
     this.formData.email = "";
     this.formData.name = "";
-    this.formData.context = "";
+    this.formData.content = "";
     
     this.closeContactForm();
 
-    Swal.fire({
-      title: "Formulario enviado!",
-      text: "Gracias, nos pondremos en contacto lo antes posible.",
-      icon: "success"
-    });
   }
 
   closeContactForm(): void {
