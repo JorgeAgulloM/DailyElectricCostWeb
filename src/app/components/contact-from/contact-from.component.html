@@ -27,7 +27,7 @@
             </div>
             <div class="mb-3">
                 <label for="context" class="form-label">Motivo de contacto (mínimo 50 caracteres)</label>
-                <textarea class="form-control" placeholder="Motivo del contacto..." name="context" id="context" [(ngModel)]="formData.context" [maxlength]="500" required minlength="50"></textarea>
+                <textarea class="form-control" placeholder="Motivo del contacto..." name="context" id="context" [(ngModel)]="formData.content" [maxlength]="500" required minlength="50"></textarea>
                 <div *ngIf="form.controls['context'].errors?.['required'] && (form.controls['context'].dirty || form.controls['context'].touched)" class="text-danger">
                     El motivo de contacto es requerido.
                 </div>
@@ -35,7 +35,7 @@
                     El motivo de contacto debe tener al menos 50 caracteres.
                 </div>
                 <div class="text-muted">
-                    Caracteres restantes: {{ 500 - formData.context.length }}
+                    Caracteres restantes: {{ 500 - formData.content.length }}
                 </div>
             </div>
             <button type="submit" class="my-btn" [ngClass]="{'my-btn-active': form.valid, 'my-btn-disabled': form.invalid}" [disabled]="form.invalid">Enviar</button>
