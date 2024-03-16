@@ -10,11 +10,18 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
+  localHost = 'http://127.0.0.1:8000'
+  serverHost = 'https://daily-electric-cost-bakend-8028a574d40e.herokuapp.com'
+
   sendPing(): Observable<any> {
-    return this.http.get<any>('http://127.0.0.1:8000/ping')
+    return this.http.get<any>(`${this.serverHost}/ping`)
   }
 
   sendContactDeveloper(data: FormData): Observable<any> {
-    return this.http.post<any>('http://127.0.0.1:8000/contact/', data);
+    return this.http.post<any>(`${this.serverHost}/contact/`, data);
+  }
+
+  sendSetSubscrition(email: string): Observable<any> {
+    return this.http.post<any>(`${this.serverHost}/public/subscribers/`, {'email': email});
   }
 }
