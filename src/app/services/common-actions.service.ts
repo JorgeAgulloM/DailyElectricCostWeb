@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SocialNetwork } from '../models/social-networks';
-import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, PRIVACY_POLICY_LINK, TWITTER, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from './../constants/constants';
-import { FormData } from '../models/form-data';
+import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, PRIVACY_POLICY_LINK, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from './../constants/constants';
 import { Observable, Subject } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
@@ -38,13 +36,9 @@ export class CommonActionsService {
   }
 
   async readUseTerms(): Promise<string> {
-    const filePath = './assets/docs/useTerms.txt'; //src\assets\docs\useTerms.txt
+    const filePath = './assets/docs/useTerms.txt';
     const res = await fetch(filePath);
     return await res.text();
-  }
-
-  contactWithDeveloper(formData: FormData): void {
-    console.log(formData);
   }
 
   toggleContactFormVisibility(show: boolean) {
