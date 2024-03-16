@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { TWITTER, YOUTUBE, INSTAGRAM } from '../../constants/constants';
 import { CommonActionsService } from '../../services/common-actions.service';
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';
+import { BackendService } from '../../services/backend/backend.service';
 
 @Component({
   selector: 'app-footer',
@@ -19,8 +20,12 @@ export class FooterComponent {
   useTermFile: string | undefined;
   showUseTermsFile: boolean = false;
 
+  private send = 0;
+
   constructor(
-    private service: CommonActionsService) {
+    private service: CommonActionsService,
+    private backendSrv: BackendService  
+  ) {
     this.currentYear = new Date().getFullYear();
   }
 
@@ -29,11 +34,30 @@ export class FooterComponent {
   instagram = INSTAGRAM;
 
   subscribeEmail(): void {
+    this.send = 1;
     Swal.fire({
-      title: "No disponible!",
-      text: "Lo sentimos, este servicio no está disponible por el momento.",
-      icon: "warning"
+      title: "Subscripción!",
+      html: "Un momento por favor, estamos registrando su solicitud...",
+      didOpen: () => {
+        Swal.showLoading();
+      }
     });
+
+    this.backendSrv.sendSetSubscrition(this.emailValue).subscribe({
+      next: (response => {
+        if (typeof response?.message !== 'undefined') {
+          this.createSwalMessage(response.message, "success")
+        } else if (typeof response?.warning !== 'undefined') {
+          this.createSwalMessage(response.warning, "warning")
+        } else if (typeof response?.error !== 'undefined') {
+          this.createSwalMessage(response.error, 'error')
+        } else {
+          this.createSwalMessage('Error desconocido', 'error')
+        }
+      }),
+      error: (() => this.createSwalMessage('Error al intentar realizar la subscripción!.\n Lo sentimos, intentelo más adelante.', 'error'))
+    })
+
     this.emailValue = '';
   }
 
@@ -78,6 +102,14 @@ export class FooterComponent {
     event.preventDefault();
     this.showUseTermsFile = false;
     this.useTermFile = undefined;
+  }
+
+  createSwalMessage(text: string, icon: SweetAlertIcon): void {
+    Swal.fire({
+      title: "Subscripción!",
+      text: text,
+      icon: icon
+    });
   }
 
 }

@@ -4,10 +4,10 @@
         <form class="input-container" #form="ngForm" novalidate>
             <input class="input-field" type="email" placeholder="Introduce tu email" name="email" [(ngModel)]="emailValue" required email #email="ngModel">
             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
-                <div *ngIf="form.controls['email'].errors?.['required']">
+                <div *ngIf="emailValue.length > 0 && form.controls['email'].errors?.['required']">
                     <p>El email es requerido.</p>
                 </div>
-                <div *ngIf="form.controls['email'].errors?.['email']">
+                <div *ngIf="emailValue.length > 0 && form.controls['email'].errors?.['email']">
                     <p>El email debe tener un formato válido.</p>
                 </div>
             </div>
