@@ -10,11 +10,12 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
-  localHost = 'http://127.0.0.1:8000'
-  serverHost = 'https://daily-electric-cost-bakend-8028a574d40e.herokuapp.com'
+  localHost = 'http://127.0.0.1:8000';
+  heroku = 'https://daily-electric-cost-bakend-8028a574d40e.herokuapp.com';
+  serverHost = this.localHost;
 
   sendPing(): Observable<any> {
-    return this.http.get<any>(`${this.serverHost}/ping`)
+    return this.http.get<any>(`${this.serverHost}/ping`);
   }
 
   sendContactDeveloper(data: FormData): Observable<any> {
@@ -22,6 +23,16 @@ export class BackendService {
   }
 
   sendSetSubscrition(email: string): Observable<any> {
-    return this.http.post<any>(`${this.serverHost}/public/subscribers/`, {'email': email});
+    return this.http.post<any>(`${this.serverHost}/subscribers/`, {'email': email});
   }
+
+  //En backend el método es un get para permitir la funcionalidad desde el email, ya se puede cambiar
+  sendActivateSubscriber(code: string): Observable<any> {
+    return this.http.get<any>(`${this.serverHost}/public/subscribers/activate/${code}`);
+  }
+
+  getEmailSubscriptor(core: string): Observable<String> {
+    return this.http.get<string>(`${this.serverHost}`)
+  }
+
 }
