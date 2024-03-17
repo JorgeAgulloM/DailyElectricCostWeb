@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyElectricCostWebApp</title>
+</head>
+<body>
+  
+  <div class="my-body my-container">
+    <app-top-bar></app-top-bar>
+    <br>
+    <app-header></app-header>
+    <br>
+    <app-media></app-media>
+    <br>
+    <app-app-features></app-app-features>
+    <br>
+    <app-footer></app-footer>
+    @if (showContactForm) {
+      <div class="my-body-modal">
+        <div class="my-modal">
+          <app-contact-from></app-contact-from>
+        </div>
+      </div>
+    }
+  </div>
+
+</body>
+</html>
