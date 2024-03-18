@@ -15,7 +15,7 @@ body {
 
 .my-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-left: 1%;
@@ -25,16 +25,28 @@ body {
 
 img {
     max-width: 200px;
-    
 }
 
 .text {
+    flex: 1;
     margin-top: 24px;
     margin-bottom: 24px;
-    width: 600px;
+    width: 70%;
     text-align: center;
 }
 
+.sub-text {
+    flex: 1;
+    width: 70%;
+    margin-bottom: 24px;
+}
+
+a, a.disabled-link {
+    min-width: 200px;
+    text-align: center;
+    color: var(--btn-active-bg-color);
+    cursor: pointer;
+}
 
 @media screen and (max-width: 630px) {
     img {
