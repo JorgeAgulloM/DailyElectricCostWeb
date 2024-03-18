@@ -64,6 +64,8 @@ export class SubscritionsComponent implements OnInit {
   private acivateSubscription(): void {
     this.backendSrv.sendActivateSubscriber(this.code).subscribe({
       next: ((response) => {
+        this.isCanceled = false;
+
         if (typeof response?.message !== 'undefined') {
           this.responseOfSubscription = response.message;
         } else if (typeof response?.warning !== 'undefined') {
