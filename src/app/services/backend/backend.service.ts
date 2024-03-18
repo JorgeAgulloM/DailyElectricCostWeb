@@ -10,9 +10,11 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
+
   localHost = 'http://127.0.0.1:8000';
   heroku = 'https://daily-electric-cost-bakend-8028a574d40e.herokuapp.com';
-  serverHost = this.localHost;
+  serverHost = this.heroku;
+  subscriberUrl = `${this.serverHost}/subscribers`
 
   sendPing(): Observable<any> {
     return this.http.get<any>(`${this.serverHost}/ping`);
@@ -23,20 +25,20 @@ export class BackendService {
   }
 
   sendSetSubscrition(email: string): Observable<any> {
-    return this.http.post<any>(`${this.serverHost}/subscribers/`, {'email': email});
+    return this.http.post<any>(`${this.subscriberUrl}/`, {'email': email});
   }
 
   //En backend el método es un get para permitir la funcionalidad desde el email, ya se puede cambiar
   sendActivateSubscriber(code: string): Observable<any> {
-    return this.http.get<any>(`${this.serverHost}/public/subscribers/activate/${code}`);
+    return this.http.get<any>(`${this.subscriberUrl}/activate/${code}`);
   }
 
   sendCancelSubscriber(code: string): Observable<any> {
-    return this.http.get<any>(`${this.serverHost}/public/subscribers/cancel/${code}`);
+    return this.http.get<any>(`${this.subscriberUrl}/cancel/${code}`);
   }
 
   getEmailSubscriptor(code: string): Observable<any> {
-    return this.http.get<any>(`${this.serverHost}/public/subscribers/email/${code}`)
+    return this.http.get<any>(`${this.subscriberUrl}/email/${code}`)
   }
 
 }
