@@ -11,6 +11,9 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 })
 export class SubscritionsComponent implements OnInit {
   @Input('code') code!: string;
+  
+  
+  responseOfSubscription: string = '';
 
   constructor(private backendSrv: BackendService) {}
 
@@ -22,16 +25,22 @@ export class SubscritionsComponent implements OnInit {
 
   acivateSubscription(): void {
     this.backendSrv.sendActivateSubscriber(this.code).subscribe({
-      next: (() => this.createSwalMessage('Tu subscripción ha sido activada!', 'success')),
-      error: (() => this.createSwalMessage('Opsss!! Algo ha salido mal.', 'error'))
+      next: ((response) => {
+        if (typeof response?.message !== 'undefined') {
+          this.responseOfSubscription = response.message;
+        } else if (typeof response?.warning !== 'undefined') {
+          this.responseOfSubscription = response.warning;
+        } else if (typeof response?.error !== 'undefined') {
+          this.responseOfSubscription = response.error;
+        } else {
+          this.responseOfSubscription = response.error;
+        }
+      }),
+      error: ((error) => {
+        this.responseOfSubscription = error.error;
+      })
     })
   }
 
-  private createSwalMessage(text: string, icon: SweetAlertIcon): void {
-    Swal.fire({
-      title: "Subscripción!",
-      text: text,
-      icon: icon,
-    })
-  }
+
 }
