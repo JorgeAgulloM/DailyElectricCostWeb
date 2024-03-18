@@ -31,8 +31,12 @@ export class BackendService {
     return this.http.get<any>(`${this.serverHost}/public/subscribers/activate/${code}`);
   }
 
-  getEmailSubscriptor(core: string): Observable<String> {
-    return this.http.get<string>(`${this.serverHost}`)
+  sendCancelSubscriber(code: string): Observable<any> {
+    return this.http.get<any>(`${this.serverHost}/public/subscribers/cancel/${code}`);
+  }
+
+  getEmailSubscriptor(code: string): Observable<any> {
+    return this.http.get<any>(`${this.serverHost}/public/subscribers/email/${code}`)
   }
 
 }
