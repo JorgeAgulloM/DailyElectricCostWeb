@@ -6,7 +6,6 @@
   <title>DailyElectricCostWebApp</title>
 </head>
 <body>
-  
   <div class="my-body">
     <div class="my-container">
         <img src=".\assets\img\bombilla_mhi.png" alt="">
@@ -17,6 +16,22 @@
     <div class="my-container">
       <div class="text">
         <h3>{{ responseOfSubscription }}</h3>
+      </div>
+      <br>
+      <div class="sub-text">
+        @if (isCanceled) {
+          <p>Lamentamos mucho que hayas decidido cancelar tu suscripción.</p>
+          <p>Queremos informarte que ya no recibirás más correos electrónicos por nuestra parte. Sin embargo, si en algún momento decides que quieres volver a recibir nuestras actualizaciones, ¡no dudes en <a class="disabled-link" (click)="goToGooglePlay($event)">activar</a> tu suscripción nuevamente!</p>
+          <p>Además, queremos asegurarte que tus datos están en buenas manos. Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Según nuestra política de privacidad, tus datos serán eliminados automáticamente de nuestros registros en aproximadamente 7 días. Si prefieres que eliminemos tus datos de forma inmediata, no dudes en contactarnos.</p>
+          <p>Si decides reactivar tu subscribción, pudes hacerlo desde <a class="disabled-link" (click)="goToGooglePlay($event)">aquí</a> con solo un click antes de 7 días. Después solo podrás realizar una subscripción nueva desde nuestra <a href="https://dailyelectriccost.web.app/">web</a></p>
+          <p>Gracias por habernos dado la oportunidad de estar en contacto contigo. Si en el futuro decides volver, estaremos aquí para recibirte con los brazos abiertos.</p>
+        } @else {
+          <p>¡Gracias por activar tu suscripción!</p>
+          <p>Estamos encantados de tenerte a bordo. Queremos recordarte que tu satisfacción es nuestra prioridad número uno. Si en algún momento decides que ya no deseas recibir nuestras actualizaciones, ¡no hay problema! Siempre puedes <a class="disabled-link" (click)="cancelSubscrition($event)">cancelar</a> tu suscripción en cualquier momento.</p>
+          <p>Además, queremos asegurarte que tus datos están en buenas manos. Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Nuestra política de privacidad detalla cómo tratamos la información que nos proporcionas. Puedes revisar nuestra política de privacidad en cualquier momento haciendo clic <a class="disabled-link" (click)="goToPrivacyPolicy($event)">aquí</a>.</p>
+          <p>¡No te olvides de descargar nuestra <a class="disabled-link" (click)="goToGooglePlay($event)"> aplicación!</a> Disponible en Android, nuestra aplicación te permite disfrutar de todas las ventajas de nuestra plataforma desde la comodidad de tu dispositivo móvil. <a class="disabled-link" (click)="goToGooglePlay($event)">¡Descárgala ahora!</a></p>
+          <p>¡Gracias por confiar en nosotros!</p>
+        }
       </div>
     </div>
   </div>
