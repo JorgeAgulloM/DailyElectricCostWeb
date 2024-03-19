@@ -1,9 +1,7 @@
 
 .use-terms {
-    position: absolute;
-    flex: 1;
+    position: relative;
     z-index: 10;
-    transform: translateY(-100%);
     background-color: black;
     margin: 4%;
     padding: 4%;
@@ -18,7 +16,7 @@
 }
 
 .use-terms h3 {
-    color: white;
+    color: whitesmoke;
 }
 
 .my-btn-secondary {
