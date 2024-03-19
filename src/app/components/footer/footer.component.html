@@ -18,7 +18,7 @@
     <div class="footer">
         <div class="privacy">
             <a class="disabled-link" (click)="goToPrivacyPolicy($event)">Política de privacidad</a>
-            <a class="disabled-link" (click)="getUseTermsText($event)">Terminos de uso</a>
+            <a class="disabled-link" (click)="showToUseTerms($event)">Terminos de uso</a>
             <a class="disabled-link" (click)="showToFormContact($event)" >Contacto con desarrollador</a>
         </div>
         <div class="rrss">
@@ -29,12 +29,5 @@
         <div class="end">
             <a class="disabled-link" (click)="goToGooglePlay($event)">{{ currentYear }} Daily Electric Cost</a>
         </div>
-        @if (showUseTermsFile) {
-            <div class="use-terms">
-                <button (click)="closeUseTerms($event)" class="my-btn my-btn-secondary">X</button>
-                <h3>Términos y Condiciones de Uso</h3>
-                <pre>{{ useTermFile }}</pre>
-            </div>
-        }
     </div>
 </section>

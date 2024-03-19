@@ -16,10 +16,7 @@ import { BackendService } from '../../services/backend/backend.service';
 export class FooterComponent {
 
   emailValue: string = '';
-  currentYear: number;
-  useTermFile: string | undefined;
-  showUseTermsFile: boolean = false;
-
+  currentYear: number; 
   private send = 0;
 
   constructor(
@@ -71,6 +68,11 @@ export class FooterComponent {
     this.service.toggleContactFormVisibility(true);
   }
 
+  showToUseTerms(event: MouseEvent): void {
+    event.preventDefault();
+    this.service.toggleUseTermsFormVisibility(true);
+  }
+
   goToSocialNetwork(event: MouseEvent, social: string): void {
     event.preventDefault();
     this.service.goToSocialNetworks(social);
@@ -79,29 +81,6 @@ export class FooterComponent {
   goToPrivacyPolicy(event: MouseEvent): void {
     event.preventDefault();
     this.service.goToPrivacyPolicy();
-  }
-
-  getUseTermsText(event: MouseEvent): void {
-    event.preventDefault();
-    if (this.showUseTermsFile) {
-      this.closeUseTerms(event);
-    } else {
-      this.service.readUseTerms()
-      .then(content => {
-        this.useTermFile = content;
-      })
-      .catch(error => console.log('Error reading file:', error))
-      .finally(() => {
-        this.showUseTermsFile = true;
-        console.log('text:', this.useTermFile)
-      });
-    }
-  }
-
-  closeUseTerms(event: MouseEvent): void {
-    event.preventDefault();
-    this.showUseTermsFile = false;
-    this.useTermFile = undefined;
   }
 
   createSwalMessage(text: string, icon: SweetAlertIcon): void {
