@@ -9,6 +9,7 @@ import { Observable, Subject } from 'rxjs';
 export class CommonActionsService {
 
   private formContactVisibility = new Subject<boolean>();
+  private useTermsVisibility = new Subject<boolean>();
 
   goToGooglePlay(): void {
     this.goToSomewere(GOOGLE_PLAY_APP_LINK);
@@ -42,7 +43,6 @@ export class CommonActionsService {
   }
 
   toggleContactFormVisibility(show: boolean) {
-    console.log(`toggleContactFormVisibility param value: ${show}`)
     this.formContactVisibility.next(show);
   }
 
@@ -50,6 +50,14 @@ export class CommonActionsService {
     return this.formContactVisibility.asObservable();
   }
   
+  toggleUseTermsFormVisibility(show: boolean) {
+    this.useTermsVisibility.next(show);
+  }
+
+  getUseTermsVisibility(): Observable<boolean> {
+    return this.useTermsVisibility.asObservable();
+  }
+
   private goToSomewere(link: string): void {
     if (this.isGoogdLink(link)) {
       window.open(link, '_blanck');
