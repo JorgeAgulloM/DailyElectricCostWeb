@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonActionsService } from '../../services/common-actions.service';
+import { CommonActionsService } from '../../services/common/common-actions.service';
 import { INSTAGRAM, TWITTER, YOUTUBE } from '../../constants/constants';
 
 @Component({

@@ -7,7 +7,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { MediaComponent } from '../../components/media/media.component';
 import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 import { Subscription } from 'rxjs';
-import { CommonActionsService } from '../../services/common-actions.service';
+import { CommonActionsService } from '../../services/common/common-actions.service';
 
 @Component({
   selector: 'app-home',

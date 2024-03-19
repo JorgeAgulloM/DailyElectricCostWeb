@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { SocialNetwork } from '../models/social-networks';
-import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, PRIVACY_POLICY_LINK, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from './../constants/constants';
+import { SocialNetwork } from '../../models/social-networks';
+import { GOOGLE_PLAY_APP_LINK, INSTAGRAM_ACCOUNT_LINK, PRIVACY_POLICY_LINK, TWITTER_ACCOUNT_LINK, YOUTUBE_ACCOUNT_LINK } from '../../constants/constants';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TWITTER, YOUTUBE, INSTAGRAM } from '../../constants/constants';
-import { CommonActionsService } from '../../services/common-actions.service';
+import { CommonActionsService } from '../../services/common/common-actions.service';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgIf } from '@angular/common';

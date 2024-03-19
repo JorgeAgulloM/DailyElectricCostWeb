@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BackendService } from '../../services/backend/backend.service';
-import { CommonActionsService } from '../../services/common-actions.service';
+import { CommonActionsService } from '../../services/common/common-actions.service';
 
 @Component({
   selector: 'app-subscritions',

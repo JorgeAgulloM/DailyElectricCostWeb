@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonActionsService } from "../../services/common-actions.service";
+import { CommonActionsService } from "../../services/common/common-actions.service";
 import { BackendService } from "../../services/backend/backend.service";
 import { FormData } from "../../models/form-data";
 import { FormsModule } from "@angular/forms";
